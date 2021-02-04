@@ -3,4 +3,4 @@ project(Demo C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(Demo main.c)
+add_executable(Demo main.c list.c list.h frames.c frames.h)
