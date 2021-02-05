@@ -6,6 +6,10 @@
 #define DEMO_FRAMES_H
 #include "../data_structure/list.h"
 
+/**
+ * 页帧管理
+ */
+
 int allocFrame(List *frames);
 int freeFrame(List *frames, int frameNumber);
 
