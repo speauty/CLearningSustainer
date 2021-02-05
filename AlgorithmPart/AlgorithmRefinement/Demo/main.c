@@ -8,8 +8,8 @@ void destroy (void *data)
 
 int main() {
     List test;
-    listInit(&test, destroy);
-    listInsNext(&test, NULL, (const void *) 'a');
-    printf("Hello, World! %c", listData(listHead(&test)));
+    list_init(&test, destroy);
+    list_ins_next(&test, NULL, (const void *) 'a');
+    printf("Hello, World! %c", list_data(list_head(&test)));
     return 0;
 }

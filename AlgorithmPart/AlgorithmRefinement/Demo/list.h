@@ -15,12 +15,12 @@ typedef struct __ListElement
     struct __ListElement *next;
 } ListElement;
 /** 链表结构定义 */
-typedef struct __List
+typedef struct __list
 {
     /** 链表元素数量 */
     int size;
-    int (*match) (const void *keyFirst, const void *keySecond);
-    /** 释放元素数据存储的函数 */
+    int (*match) (const void *key_first, const void *key_second);
+    /** 释放动态分配空间(也就是这里分配的数据空间)的函数 */
     void (*destroy) (void *data);
     /** 链表头指针和尾指针, 并且在单向链表中, tail的next永远为NULL */
     ListElement *head;
@@ -28,16 +28,16 @@ typedef struct __List
 } List;
 
 /** 开放接口 */
-void listInit(List *list, void(*destroy) (void *data));
-void listDestroy(List *list);
-int listInsNext(List *list, ListElement *element, const void *data);
-int listRemNext(List *list, ListElement *element, void **data);
-#define listSize(list) ((list)->size)
-#define listHead(list) ((list)->head)
-#define listTail(list) ((list)->tail)
-#define listIsHead(list, element) ((element)==(list)->head?1:0)
-#define listIsTail(list, element) ((element)==(list)->tail?1:0)
-#define listData(element) ((element)->data)
-#define listNext(element) ((element)->next)
+void list_init(List *list, void(*destroy) (void *data));
+void list_destroy(List *list);
+int list_ins_next(List *list, ListElement *element, const void *data);
+int list_rem_next(List *list, ListElement *element, void **data);
+#define list_size(list) ((list)->size)
+#define list_head(list) ((list)->head)
+#define list_tail(list) ((list)->tail)
+#define list_is_head(list, element) ((element)==(list)->head?1:0)
+#define list_is_tail(list, element) ((element)==(list)->tail?1:0)
+#define list_data(element) ((element)->data)
+#define list_next(element) ((element)->next)
 
 #endif //DEMO_LIST_H

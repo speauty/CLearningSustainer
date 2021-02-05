@@ -13,10 +13,10 @@ int allocFrame(List *frames)
 {
     int frameNumber, *data;
     /** 判断是否存在空闲页帧 */
-    if (0 == listSize(frames)) {
+    if (0 == list_size(frames)) {
         return -1;
     } else {
-        if (0 != listRemNext(frames, NULL, (void **)&data)) {
+        if (0 != list_rem_next(frames, NULL, (void **)&data)) {
             /** 获取空闲页帧失败 */
             return -1;
         } else {
@@ -40,6 +40,6 @@ int freeFrame(List *frames, int frameNumber)
     /** 分配空间失败 */
     if (NULL == (data = (int *)malloc(sizeof(int)))) return -1;
     *data = frameNumber;
-    if (0 != listInsNext(frames, NULL, data)) return -1;
+    if (0 != list_ins_next(frames, NULL, data)) return -1;
     return 0;
 }

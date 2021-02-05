@@ -11,7 +11,7 @@
  * @param list 需要初始化的链表
  * @param destroy
  */
-void listInit(List *list, void(*destroy)(void *data))
+void list_init(List *list, void(*destroy)(void *data))
 {
     list->size = 0;
     list->destroy = destroy;
@@ -23,16 +23,16 @@ void listInit(List *list, void(*destroy)(void *data))
  * 销毁链表
  * @param list
  */
-void listDestroy(List *list)
+void list_destroy(List *list)
 {
     /** 一级空指针类型 */
     void *data;
     /** 循环移除在链表中的每一个元素 */
-    while (listSize(list) > 0) {
+    while (list_size(list) > 0) {
         /**
          * &data 取到指向data(本身就是个指针类型)的指针(二级指针)
          */
-        if (0 == listRemNext(list, NULL, (void **)&data) && NULL != list->destroy) {
+        if (0 == list_rem_next(list, NULL, (void **)&data) && NULL != list->destroy) {
             list->destroy(data);
         }
     }
@@ -47,7 +47,7 @@ void listDestroy(List *list)
  * @param data 元素数据对象
  * @return
  */
-int listInsNext(List *list, ListElement *element, const void *data)
+int list_ins_next(List *list, ListElement *element, const void *data)
 {
     ListElement *newElement;
     /** 分配空间 */
@@ -58,7 +58,7 @@ int listInsNext(List *list, ListElement *element, const void *data)
     if (NULL == element) {
         /** 以头元素形式插入 */
         /** 如果链表长度为0, 主动将尾元素也设置为新元素 */
-        if (0 == listSize(list)) list->tail = newElement;
+        if (0 == list_size(list)) list->tail = newElement;
         /** 此处将为新元素的next指向head, 以链接原来的头元素(如果存在的情况) */
         newElement->next = list->head;
         list->head = newElement;
@@ -84,11 +84,11 @@ int listInsNext(List *list, ListElement *element, const void *data)
  * @param data 二级空指针类型
  * @return
  */
-int listRemNext(List *list, ListElement *element, void **data)
+int list_rem_next(List *list, ListElement *element, void **data)
 {
     ListElement *oldElement;
     /** 如果链表长度为0, 则直接返回-1, 表示当前链表为空, 不需处理 */
-    if (0 == listSize(list)) return -1;
+    if (0 == list_size(list)) return -1;
 
     if (NULL == element) {
         /**
@@ -101,7 +101,7 @@ int listRemNext(List *list, ListElement *element, void **data)
         /** 重置头元素 */
         list->head = list->head->next;
         /** 如果只有一个元素时, 需要将尾元素置为NULL */
-        if (1 == listSize(list)) list->tail = NULL;
+        if (1 == list_size(list)) list->tail = NULL;
     } else {
         /** 不能移除尾元素 */
         if (NULL == element->next) return -1;
