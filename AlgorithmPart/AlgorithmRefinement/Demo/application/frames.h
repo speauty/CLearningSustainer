@@ -4,7 +4,7 @@
 
 #ifndef DEMO_FRAMES_H
 #define DEMO_FRAMES_H
-#include "list.h"
+#include "../data_structure/list.h"
 
 int allocFrame(List *frames);
 int freeFrame(List *frames, int frameNumber);

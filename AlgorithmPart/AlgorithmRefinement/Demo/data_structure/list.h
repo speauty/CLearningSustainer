@@ -19,7 +19,7 @@ typedef struct __list
 {
     /** 链表元素数量 */
     int size;
-    int (*match) (const void *key_first, const void *key_second);
+    int (*match) (const void *keyFirst, const void *keySecond);
     /** 释放动态分配空间(也就是这里分配的数据空间)的函数 */
     void (*destroy) (void *data);
     /** 链表头指针和尾指针, 并且在单向链表中, tail的next永远为NULL */
