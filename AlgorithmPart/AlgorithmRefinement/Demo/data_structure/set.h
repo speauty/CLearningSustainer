@@ -17,7 +17,7 @@ typedef List Set;
 #define set_size(set) ((set)->size)
 
 /** 集合初始化 */
-void set_init(Set *set, int (*match) (const void *keyFirst, const void keySecond), void (*destroy) (void *data))
+void set_init(Set *set, int (*match) (const void *keyFirst, const void *keySecond), void (*destroy) (void *data));
 /** 集合插入新元素 */
 int set_insert(Set *set, const void *data);
 /** 集合移除元素 */
