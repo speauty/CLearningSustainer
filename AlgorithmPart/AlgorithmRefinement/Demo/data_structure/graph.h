@@ -30,6 +30,9 @@ typedef struct __Graph
     List adjLists;
 } Graph;
 
+/** 顶点颜色枚举类型 */
+typedef enum __VertexColor{white, gray, black} VertexColor;
+
 #define graph_adjList(graph) ((graph)->adjLists)
 #define graph_vCount(graph) ((graph)->vCount)
 #define graph_eCount(graph) ((graph)->eCount)
