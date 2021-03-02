@@ -37,6 +37,46 @@ int isSort(void *data, int size, int eSize, int (*compare) (const void *key1, co
  */
 int qkSort(void *data, int size, int eSize, int i, int k, int (*compare) (const void *key1, const void *key2));
 
+/**
+ * 归并排序(一种分治排序算法)
+ * 将一个无序元素集分割成许多个只包含一个元素的集, 然后不断地将这些小集合并, 直到一个新的大有序数据集生成
+ * 分: 将数据集等分为两半
+ * 治: 分别在两个部分用递归的方式继续使用归并排序法
+ * 合: 将分开的两个部分合并成一个有序的数据集
+ * @param data 需要进行排序的数组
+ * @param size 元素的数量
+ * @param eSize 元素的大小, 方便偏移运算
+ * @param i 前分割点? 定义当前进行排序的两个部分, 0
+ * @param k 后分割点? size-1
+ * @param compare 自定义元素比较方法
+ * @return
+ */
+int mgSort(void *data, int size, int eSize, int i, int k, int (*compare) (const void *key1, const void *key2));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
