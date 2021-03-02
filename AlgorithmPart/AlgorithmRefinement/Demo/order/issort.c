@@ -26,7 +26,7 @@ int isSort(void *data, int size, int eSize, int (*compare) (const void *key1, co
         /** i从0开始 */
         i = j - 1;
         /** i大于0并且第i个元素大于第j个元素(就是当前key)*/
-        /** 向前移 */
+        /** 向前移(持续交换) */
         while (i >= 0 && compare(&dataPtr[i*eSize], key) > 0) {
             /** 将第i个元素的内容拷贝到第i+1个元素 */
             /** 第一轮的i+1就是j位置的元素, i+1位置的已经在key存储 */

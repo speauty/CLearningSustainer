@@ -29,9 +29,9 @@ int isSort(void *data, int size, int eSize, int (*compare) (const void *key1, co
  * 合: 对分割部分排序直至完成
  * @param data 需要进行排序的数组
  * @param size 元素的数量
- * @param eSize 元素的大小
- * @param i 定义当前进行排序的两个部分, 0
- * @param k size-1
+ * @param eSize 元素的大小, 方便偏移运算
+ * @param i 前分割点? 定义当前进行排序的两个部分, 0
+ * @param k 后分割点? size-1
  * @param compare 自定义元素比较方法
  * @return
  */
