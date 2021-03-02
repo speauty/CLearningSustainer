@@ -53,6 +53,16 @@ int qkSort(void *data, int size, int eSize, int i, int k, int (*compare) (const 
  */
 int mgSort(void *data, int size, int eSize, int i, int k, int (*compare) (const void *key1, const void *key2));
 
+/**
+ * 计数排序(线性排序)
+ * 通过计算一个集合中元素出现的次数来确定集合如何排列
+ * 只能用于整型或者那些可以用整型来表示的数据集合
+ * @param data 待排序的数组
+ * @param size 元素的数量
+ * @param k data中最大的整数加1
+ * @return
+ */
+int ctSort(int *data, int size, int k);
 
 
 
