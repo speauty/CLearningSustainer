@@ -64,6 +64,20 @@ int mgSort(void *data, int size, int eSize, int i, int k, int (*compare) (const 
  */
 int ctSort(int *data, int size, int k);
 
+/**
+ * 基数排序(线性排序)
+ * 将数据按位分开, 并从数据的最低有效位到最高有效位进行比较, 依次排序, 从而得到有序数据集合
+ * 在元素每一位上应用计数排序来对数据集合排序
+ * 只要能把元素分割成整型数, 就可以使用基数排序
+ * 获取每位数值的简单方法就是使用幂运算和模运算
+ * @param data
+ * @param size 元素的俄数量
+ * @param p 每个整数包含的位数(最大位数)
+ * @param k 基数
+ * @return
+ */
+int rxSort(int *data, int size, int p, int k);
+
 
 
 
