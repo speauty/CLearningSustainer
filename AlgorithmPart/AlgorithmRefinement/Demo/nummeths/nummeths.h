@@ -29,4 +29,29 @@ int interpol(const double *x, const double *fx, int n, double *z, double *pz, in
  */
 void lsqe(const double *x, const double *y, int n, double *b1, double *b0);
 
+/**
+ * 方程求解
+ * 采用牛顿迭代法根据给定的初始值来计算方程f的根
+ * 如果当前得到的近似值与前一轮迭代得到的近似值之差小于delta所指定的值, 则认为当前的近似值满足要求
+ * @param f 需要求解的方程
+ * @param g f的导函数
+ * @param x x点集
+ * @param n 最大迭代次数
+ * @param delta 逐次逼近的差值
+ * @return
+ */
+int root(double (*f) (double x), double (*g) (double x), double *x, int *n, double delta);
+
+
+
+
+
+
+
+
+
+
+
+
+
 #endif //DEMO_NUMMETHS_H
