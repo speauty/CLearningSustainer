@@ -22,8 +22,12 @@ typedef struct __HuffNode
 /** 霍夫曼表定义 */
 typedef struct __HuffCode
 {
+    /** 默认为1的标志位, 指示此条目是否已经存放一个代码 */
     unsigned char used;
+    /** 存放在条目中的霍夫曼编码 */
     unsigned short code;
+    /** 编码包含的位数, 编码包含的位数, 每个编码都是一个短整数 */
+    /** 当所有的频率调整到可以用一个字节来表示时, 没有编码会大于16位 */
     unsigned char size;
 } HuffCode;
 
