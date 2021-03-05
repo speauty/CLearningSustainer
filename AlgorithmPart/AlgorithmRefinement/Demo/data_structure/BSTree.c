@@ -341,7 +341,7 @@ void bstree_init(BSTree *tree, int (*compare) (const void *key1, const void *key
 void bstree_destroy(BSTree *tree)
 {
     destroy_left(tree, NULL);
-    memset(tree, 0, sizeof(BSTree))
+    memset(tree, 0, sizeof(BSTree));
 }
 
 int bstree_insert(BSTree *tree, const void *data)
